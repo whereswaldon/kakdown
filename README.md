@@ -9,7 +9,7 @@ Tools for working with Markdown in [Kakoune](https://github.com/mawww/kakoune), 
 
 ## Dependencies
 
-You need the `livemd` markdown renderer to use the `md-preview` command.
+You need the [`livemd`](https://github.com/barakmich/livemd) markdown renderer to use the `md-preview` command.
 
 If you have go installed, just run:
 
