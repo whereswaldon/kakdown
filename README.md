@@ -21,7 +21,22 @@ Make sure that `$GOPATH/bin` is in your `$PATH`.
 
 ## Installation
 
-Place `kakdown.kak` into `~/.config/kak/autoload/`.
+```bash
+git clone https://github.com/whereswaldon/kakdown
+ln -sv $PWD/kakdown/kakdown.kak ~/.config/kak/autoload/
+```
+
+**Note:** If this is your first time installing a Kakoune plugin and you don't already
+have a `~/.config/kak/autoload/` folder, I recommend following these steps to create
+it:
+
+```bash
+mkdir -p ~/.config/kak/autoload/
+ln -sv $(dirname $(which kak))/../share/kak/autoload ~/.config/kak/autoload/system
+```
+
+If you don't symlink the system-wide `autoload` folder, all of the default Kakoune
+commands will not be available next time you start your editor.
 
 ## Commands
 
