@@ -25,7 +25,7 @@ define-command -allow-override -docstring "Format the markdown table under the c
 # It depends on the `livemd` utility on Github
 define-command -allow-override -docstring "Start live-previewing this document" md-preview %{
         %sh{
-        if ! which livemd ; then
+        if ! which livemd > /dev/null 2>&1 ; then
         	echo "echo -debug 'missing dependency *livemd*'"
         	echo "echo -debug 'https://github.com/barakmich/livemd'"
 		exit
