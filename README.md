@@ -55,7 +55,7 @@ Example configuration:
 # Register custom hooks whenever I open a markdown file.
 # Because the filename filter is a regex, the literal period
 # must be escaped
-hook global BufCreate .*\.md %{
+hook global WinSetOption filetype=markdown %{
     # Print in the debug buffer so that I can tell the hook fired
     echo -debug "Markdown Mode Enabled"
 
@@ -63,7 +63,7 @@ hook global BufCreate .*\.md %{
     md-preview
 
     # Create easy user-mode mapping to format tables
-    map -docstring "format markdown table under cursor" buffer user t :eval<space>md-format-table<ret>
+    map -docstring "format markdown table under cursor" buffer user t :md-format-table<ret>
 }
 ```
 
