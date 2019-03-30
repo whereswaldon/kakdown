@@ -1,5 +1,5 @@
 # This command will align the columns in a markdown table if your current selection is within that table.
-define-command -allow-override -docstring "Format the markdown table under the cursor" md-format-table %{
+define-command -override -docstring "Format the markdown table under the cursor" md-format-table %{
         # select the current "paragraph", which should map to a markdown table
         execute-keys <a-i>p
         # select all whitespace surrounding a pipe
@@ -23,7 +23,7 @@ define-command -allow-override -docstring "Format the markdown table under the c
 # This command launches a new firefox tab to preview the current markdown document live.
 # The preview will update every time you write the file.
 # It depends on the `livemd` utility on Github
-define-command -allow-override -docstring "Start live-previewing this document" md-preview %{
+define-command -override -docstring "Start live-previewing this document" md-preview %{
         %sh{
         if ! which livemd > /dev/null 2>&1 ; then
         	echo "echo -debug 'missing dependency *livemd*'"
